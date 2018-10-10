@@ -6,7 +6,7 @@ const initialStateUser = {
     username: ''
 };
 
-export const userReducer = (state=initialStateUser, action={}) => {
+const userReducer = (state=initialStateUser, action={}) => {
     switch (action.type){
         case actions.SET_USER:
             return {
@@ -18,6 +18,34 @@ export const userReducer = (state=initialStateUser, action={}) => {
     }
 };
 
-const reducers = combineReducers({ userReducer });
+const initialStateChat = {
+    msgs: [
+        {
+            sender: 'ana',
+            msg: 'Hola! como estan?'
+        },
+        {
+            sender: 'leo',
+            msg: 'gooooooooood'
+        }
+    ]
+};
+
+const chatReducer = (state=initialStateChat, action={}) => {
+    switch (action.type){
+        case actions.SENT_CHAT_MSG:
+            return {
+                ...state,
+                msgs: [
+                    ...state.msgs,
+                    action.payload
+                ]
+            };
+        default:
+            return state;
+    }
+};
+
+const reducers = combineReducers({ userReducer, chatReducer });
 
 export default reducers;

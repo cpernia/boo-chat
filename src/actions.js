@@ -7,3 +7,13 @@ export const setUser = (username, history) => ({
         history
     }
 });
+
+export const sentMsg = (sender, msg) => {
+    return {
+        type: actions.TRY_SENT_CHAT_MSG,
+        payload: {
+            sender,
+            msg
+        }
+    }
+};
