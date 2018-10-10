@@ -18,7 +18,8 @@ class Login extends Component {
     };
 
     onSubmit = () => {
-        this.props.setUser(this.state.username);
+        const { history } = this.props;
+        this.props.setUser(this.state.username, history);
     };
 
     render(){

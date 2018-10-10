@@ -4,7 +4,11 @@ import * as actions from './constants';
 
 function* setUser(action) {
     try {
-        yield put({ type: actions.SET_USER, payload: action.payload })
+
+        yield put({ type: actions.SET_USER, payload: action.payload.username });
+
+        action.payload.history.push('/chat');
+
     } catch (e) {
         console.log(e);
     }

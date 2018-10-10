@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Greeting = ({ greeting }) => {
+const Greeting = ({ greeting, username }) => {
     return (
         <div id="greeting">
-            <h1><span>{'{'}</span>{greeting}<span>}</span></h1>
+            <h1><span>{'{'}</span>{greeting}{username ? ' ' + username:''}!<span>}</span></h1>
         </div>
     )
 };
