@@ -3,7 +3,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { Switch, Route } from 'react-router-dom';
 
 
-import Login from "./Login";
+import Login from "../containers/Login";
 import Chat from './Chat';
 import Rooms from './Rooms';
 

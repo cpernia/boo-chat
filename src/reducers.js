@@ -2,22 +2,22 @@ import { combineReducers } from 'redux';
 
 import * as actions from './constants';
 
-const initialState = {
-    hello: 'jejeje'
+const initialStateUser = {
+    username: ''
 };
 
-export const testReducer = (state=initialState, action={}) => {
+export const userReducer = (state=initialStateUser, action={}) => {
     switch (action.type){
-        case actions.CHANGE_SEARCH_FIELD:
+        case actions.SET_USER:
             return {
                 ...state,
-                searchField: action.payload
+                username: action.payload
             };
         default:
             return state;
     }
 };
 
-const reducers = combineReducers({ testReducer });
+const reducers = combineReducers({ userReducer });
 
 export default reducers;
