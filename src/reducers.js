@@ -1,6 +1,7 @@
 import { combineReducers } from 'redux';
 
 import * as actions from './constants';
+import {TRY_SENT_CHAT_MSG2} from "./constants";
 
 const initialStateUser = {
     username: ''
@@ -33,7 +34,8 @@ const initialStateChat = {
 
 const chatReducer = (state=initialStateChat, action={}) => {
     switch (action.type){
-        case actions.SENT_CHAT_MSG:
+        case actions.SENT_CHAT_MSG,
+            actions.SENT_CHAT_MSG2:
             return {
                 ...state,
                 msgs: [

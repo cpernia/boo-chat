@@ -17,3 +17,9 @@ export const sentMsg = (sender, msg) => {
         }
     }
 };
+
+export const activateChannel = () => {
+    return {
+        type: actions.INITIALIZE_WEB_SOCKETS_CHANNEL
+    }
+};

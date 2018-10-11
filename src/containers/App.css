@@ -204,13 +204,13 @@ input::placeholder{
   background: url("../assets/img/chatBackground.png");
   background-position: center center;
   background-repeat: no-repeat;
-  padding-bottom: 50px;
+  padding-bottom: 60px;
 }
 #chat-area-wrapper ul{
   font-size: 14px;
   display: flex;
   flex-flow: column wrap;
-  padding: 10px;
+  padding: 10px 10px 70px 10px;
   justify-content: flex-start;
   align-items: flex-end;
 }
@@ -334,7 +334,7 @@ input::placeholder{
 *****Media Queries******
 *************************/
 @media only screen and (max-width: 800px) {
-  #chat-wrapper.chat{
+  #chat-wrapper.chat, #main-wrapper > div {
     height: 100%;
     width: 100%;
   }

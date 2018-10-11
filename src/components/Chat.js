@@ -4,17 +4,18 @@ import { connect } from 'react-redux';
 import Greeting from './Greeting';
 import TypingArea from './TypingArea';
 
-import { sentMsg } from '../actions';
+import { sentMsg, activateChannel } from '../actions';
 
 class Chat extends Component {
     constructor(){
         super();
         this.state = {
 
-        }
+        };
     }
     componentDidMount(){
-
+        console.log('did mount');
+        this.props.activateChannel();
     }
     scrollToBottom = () => {
         this.messagesEnd.scrollIntoView({ behavior: "smooth" });
@@ -52,18 +53,20 @@ class Chat extends Component {
                     </div>
                     <div id="chat-area-typing-wrapper">
                         <div id="chat-area-wrapper">
-                            <ul>
-                                <li className="right">
-                                    <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span><br/>
-                                </li>
-                                <li className="left">
-                                    <span className="sender">Ana</span><br/>
-                                    <span>Sure!</span>
-                                </li>
-                                {this.props.msgs ? this.renderMsgs():''}
-                            </ul>
-                            <div id="divider" style={{ height: '110px' }}></div>
-                            <div ref={(el) => { this.messagesEnd = el; }}></div>
+                            <div style={{ height: '100%', overflowY: 'auto' }}>
+                                <ul>
+                                    <li className="right">
+                                        <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span><br/>
+                                    </li>
+                                    <li className="left">
+                                        <span className="sender">Ana</span><br/>
+                                        <span>Sure!</span>
+                                    </li>
+                                    {this.props.msgs ? this.renderMsgs():''}
+                                </ul>
+                                <div ref={(el) => { this.messagesEnd = el; }}></div>
+                            </div>
+                            {/*<div id="divider" style={{ height: '110px' }}></div>*/}
                         </div>
                         <TypingArea sentMessage={this.sentMessage}/>
                     </div>
@@ -80,4 +83,4 @@ const mapStateToProps = (state) => {
     }
 };
 
-export default connect(mapStateToProps, { sentMsg })(Chat);
+export default connect(mapStateToProps, { sentMsg, activateChannel })(Chat);
