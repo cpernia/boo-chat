@@ -76,7 +76,7 @@ input, textarea{
 }
 #chat-wrapper.logging{
   padding-top: 0;
-  height: 480px;
+  height: 380px;
   display: flex;
   flex-flow: column wrap;
   justify-content: center;
@@ -204,13 +204,13 @@ input::placeholder{
   background: url("../assets/img/chatBackground.png");
   background-position: center center;
   background-repeat: no-repeat;
-  padding-bottom: 110px;
+  padding-bottom: 60px;
 }
 #chat-area-wrapper ul{
   font-size: 14px;
   display: flex;
   flex-flow: column wrap;
-  padding: 10px;
+  padding: 10px 10px 70px 10px;
   justify-content: flex-start;
   align-items: flex-end;
 }
@@ -229,7 +229,8 @@ input::placeholder{
   background-color: rgba(129,218,166,0.8);
 }
 .sender{
-  display: block;
+  display: inline-block;
+  width: auto;
   padding: 4px 7px;
   background: rgba(255,255,255,0.6);
   border-radius: 10px;
@@ -301,7 +302,10 @@ input::placeholder{
 .st0{
   fill : #8D8E8D;
 }
-.st0:hover, .st0:focus{
+#face-svg-wrapper:hover{
+    cursor: pointer;
+}
+.st0:hover, .st0:focus, .st0-lighted{
   fill: #4DA370;
   cursor: pointer;
 }
@@ -330,8 +334,18 @@ input::placeholder{
 *****Media Queries******
 *************************/
 @media only screen and (max-width: 800px) {
-  #chat-wrapper.chat{
+  #chat-wrapper.chat, #main-wrapper > div {
     height: 100%;
     width: 100%;
+  }
+  #main-wrapper > div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #chat-wrapper.logging {
+    width: 85%;
+    height: 380px;
   }
 }
