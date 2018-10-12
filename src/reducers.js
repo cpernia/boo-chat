@@ -19,22 +19,13 @@ const userReducer = (state=initialStateUser, action={}) => {
 };
 
 const initialStateChat = {
-    msgs: [
-        {
-            sender: 'ana',
-            msg: 'Hola! como estan?'
-        },
-        {
-            sender: 'leo',
-            msg: 'gooooooooood'
-        }
-    ]
+    msgs: []
 };
 
 const chatReducer = (state=initialStateChat, action={}) => {
     switch (action.type){
-        case actions.SENT_CHAT_MSG ||
-            actions.SENT_CHAT_MSG2:
+        case actions.SENT_CHAT_MSG:
+            console.log(action.payload);
             return {
                 ...state,
                 msgs: [

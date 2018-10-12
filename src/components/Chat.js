@@ -13,8 +13,13 @@ class Chat extends Component {
 
         };
     }
+    componentDidUpdate(){
+        console.log('updated');
+        this.scrollToBottom();
+    }
     componentDidMount(){
         console.log('did mount');
+        document.addEventListener('focusout', this.scrollToBottom());
         this.props.activateChannel();
     }
     scrollToBottom = () => {

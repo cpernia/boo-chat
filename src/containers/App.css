@@ -76,7 +76,7 @@ input, textarea{
 }
 #chat-wrapper.logging{
   padding-top: 0;
-  height: 480px;
+  height: 380px;
   display: flex;
   flex-flow: column wrap;
   justify-content: center;
@@ -337,5 +337,15 @@ input::placeholder{
   #chat-wrapper.chat, #main-wrapper > div {
     height: 100%;
     width: 100%;
+  }
+  #main-wrapper > div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #chat-wrapper.logging {
+    width: 85%;
+    height: 380px;
   }
 }
